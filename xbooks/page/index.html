@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/lib/jQuery-1.7.2.js"></script>
+</head>
+<body>
+  <div class="login">
+    <h1>Exchange Your Books Now!</h1>
+    <input id="umail" type="text" placeholder="Your Umail Account">
+    <input id="password" type="password" placeholder="Your Password">
+    <button onclick="login();">Login</button>
+    <p>Don't have an account? <a href="register.html">Sign Up Here</a></p>
+  </div>
+  <script>
+    function login(){
+      $.post('/login', {
+        umail: $('#umail').val(),
+        password: $('#password').val()
+      }).then(function(x){
+        if (x.ok) {
+          window.location.href = 'search.html';
+        } else {
+          window.alert(x.msg);
+        }
+      });
+    };
+  </script>
+</body>
+</html>

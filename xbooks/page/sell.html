@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sell a Book</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sellbook.css">
+  <script src="js/lib/vue.min.js"></script>
+  <script src="js/lib/jQuery-1.7.2.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="topbar">
+      <a href="search.html">Search A Book</a>
+      <a href="sell.html" class="active">Sell My Book</a>
+      <a href="myaccount.html">My Account</a>
+      <a href="index.html">Log Out</a>
+    </div>
+    <div class="login">
+      <h1>SELL BOOK!</h1>
+      <ul>
+        <li><span>NAME:</span><input v-model="book.name" type="text" placeholder="name"></li>
+        <li><span>ISBN:</span><input v-model="book.isbn" type="text" placeholder="ISBN"></li>
+        <li class="not"><span>COURSE:</span><input v-model="book.course" type="text" placeholder="no space,use capital letter"></li>
+        <li><span>CONDITION:</span><input v-model="book.condition" type="number" placeholder="1-10"></li>
+        <li><span>PRICE:</span><input v-model="book.price" type="number"></li>
+        <li><span>PICTURE:</span><input v-model="book.image" type="text" placeholder="picture url"></li>
+      </ul>
+      <button class="button" @click='sellBook'>SELL!</button>
+
+    </div>
+
+  </div>
+
+  <script src="js/sellbook.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Commodity</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/commodity.css">
+  <script src="js/lib/vue.min.js"></script>
+  <script src="js/lib/jQuery-1.7.2.js"></script>
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="topbar">
+      <a href="search.html" class="active">Search A Book</a>
+      <a href="sell.html">Sell My Book</a>
+      <a href="myaccount.html">My Account</a>
+      <a href="index.html">Log Out</a>
+    </div>
+    <div class="item">
+      <img src="http://es6.ruanyifeng.com/images/cover_thumbnail_3rd.jpg" alt="">
+      <div class="itemContent">
+        <h2>book name</h2>
+        <p>by user</p>
+      </div>
+      <table>
+        <thead>
+          <td>price+shipping</td>
+          <td>condition</td>
+          <td>id+nickname</td>
+          <td>seller information</td>
+          <td>contact</td>
+        </thead>
+        <tbody>
+          <tr v-for="(item,index) in books">
+            <td>{{item.price}}</td>
+            <td>{{item.condition}}</td>
+            <td>{{item.id}}:{{item.nickName}}</td>
+            <td>{{item.information}}</td>
+            <td><button class="button" @click='contact(item.contact)'>contact me</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a href="javascript:history.go(-1)" class="button back">go back</a>
+  </div>
+
+  <script src="js/commodity.js"></script>
+</body>
+
+</html>

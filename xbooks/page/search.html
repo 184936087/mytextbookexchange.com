@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Search a Book</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/search.css">
+  <script src="js/lib/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+
+    <div class="topbar">
+      <a href="search.html" class="active">Search A Book</a>
+      <a href="sell.html">Sell My Book</a>
+      <a href="myaccount.html">My Account</a>
+      <a href="index.html">Log Out</a>
+    </div>
+    
+    <h1>Searching Your Books Now!</h1>
+    <div class="searchData clearfix">
+
+      <select v-model="option">
+        <option v-for="(item,index) in options" :value="item">{{item}}</option>
+      </select>
+      <input :placeholder=placeTxt v-model="searchItem" type="text">
+      <button @click='search(option,searchItem)' class="button">search</button>
+    </div>
+  </div>
+
+  <script src="js/search.js"></script>
+</body>
+</html>

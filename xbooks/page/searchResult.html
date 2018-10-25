@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Result</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/searchResult.css">
+  <script src="js/lib/vue.min.js"></script>
+  <script src="js/lib/jQuery-1.7.2.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="topbar">
+      <a href="search.html" class="active">Search A Book</a>
+      <a href="sell.html">Sell My Book</a>
+      <a href="myaccount.html">My Account</a>
+      <a href="index.html">Log Out</a>
+    </div>
+
+    <div class="result">
+      <div v-for="(item,index) in books" class="bookContent">
+        <img :src="item.image" alt="book image">
+        <h2>Name <span style="color:black">{{item.name}}</span></h2>
+        <!-- <p><span>by</span>Thomas Sowell</p> -->
+        <!-- <h2>brief introduction</h2> -->
+        <!-- <p><i>This book covers all the differences between the ES6 and the previous version of ES5, gives a detailed introduction to the grammar knowledge involved, and gives a large number of simple and easy to understand sample code.</i></p> -->
+        <h2>Price <small style="color:black">${{item.price}}</small></h2>
+        <h2><button @click="showData(item.seller)">Seller</button></h2>
+      </div>
+<!--
+      <div class="bookContent">
+        <h2>bookName <span>Dec2,2014</span></h2>
+        <p><span>by</span>Thomas Sowell</p>
+        <h2>brief introduction</h2>
+        <p><i>This book covers all the differences between the ES6 and the previous version of ES5, gives a detailed introduction to the grammar knowledge involved, and gives a large number of simple and easy to understand sample code.</i></p>
+        <h2>price</h2>
+        <p><span>$100<sup>05</sup></span></p>
+        <h2>More Buying Choices</h2>
+        <p><span>$1.99</span>(20 used & new offers)</p>
+      </div>
+ -->
+      <a class="button" href="search.html">search</a>
+    </div>
+  </div>
+
+  <script src="js/searchResult.js"></script>
+</body>
+
+</html>

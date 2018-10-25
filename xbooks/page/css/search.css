@@ -1,0 +1,64 @@
+body {
+  padding-bottom: 100px;
+}
+.topbar {
+  height: 40px;
+  width: 100%;
+  background-color: #333333;
+}
+.topbar a {
+  display: block;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+}
+.topbar a.active,
+.topbar a:hover {
+  background-color: #3d97e5;
+}
+h1 {
+  line-height: 70px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+.searchData {
+  margin: 40px;
+}
+.searchData input {
+  width: 200px;
+}
+.button {
+  background-color: #3d97e5;
+  color: #fff;
+  width: 70px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  outline: none;
+  margin-left: 10px;
+}
+table {
+  width: 100%;
+  border: 1px solid #3d97e5;
+}
+table tr {
+  height: 50px;
+}
+table img {
+  height: 100px;
+}
+table td {
+  border: 1px solid #3d97e5;
+  text-align: center;
+}
+.back {
+  position: fixed;
+  right: 100px;
+  bottom: 30px;
+}

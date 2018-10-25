@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Seller</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/Buyer.css">
+  <script src="js/lib/vue.min.js"></script>
+  <script src="js/lib/jQuery-1.7.2.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="topbar">
+      <a href="search.html">Search A Book</a>
+      <a href="sell.html">Sell My Book</a>
+      <a href="myaccount.html" class="active">My Account</a>
+      <a href="index.html">Log Out</a>
+    </div>
+
+    <table>
+      <thead>
+        <td>name</td>
+        <td>price</td>
+        <td class="de">DELETE</td>
+      </thead>
+      <tbody>
+        <tr v-for="(item,index) in items">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td><button @click='del(item.id)'>delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="sell.html" class="button">go to SELL!</a>
+  </div>
+
+  <script src="js/sell.js"></script>
+  <script>
+    $(function(){
+      $.get('/books').then(function(x){
+        if (x.ok) {
+          x.books.forEach(function(b){
+            vm.items.push(b);
+          });
+        } else {
+          window.alert(x.msg);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

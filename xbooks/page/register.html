@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/register.css">
+  <script src="js/lib/vue.min.js"></script>
+  <script src="js/lib/jQuery-1.7.2.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="login">
+      <h1>Use Your Umail To Start!</h1>
+      <input type="text" v-model="umail" placeholder="Your Umail Account">
+      <input type="text" v-model="username" placeholder="Your Nickname">
+      <input type="password" v-model="password1" placeholder="Enter Your Password">
+      <input type="password" v-model="password2" placeholder="confirm Your Password">
+      <input type="text" v-model="phone" placeholder="Your Phone">
+      <label><input type="checkbox"><div class="checkBox"></div>I agree contract</label>
+      <button @click="sign()">Sign up</button>
+      <p>Already have an account <a href="index.html">Login Here</a></p>
+    </div>
+  </div>
+
+
+  <script src="js/register.js"></script>
+</body>
+</html>
